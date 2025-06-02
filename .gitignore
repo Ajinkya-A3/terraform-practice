@@ -1,0 +1,33 @@
+# Local Terraform directories
+.terraform/
+
+# Crash logs
+crash.log
+
+# Terraform state files and backups
+*.tfstate
+*.tfstate.*
+
+# Override files that are usually local and should not be shared
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# CLI configuration files
+.terraformrc
+terraform.rc
+
+# Generated private key files (from your key-pair generation)
+key-pair/*.pem
+
+# Sensitive variable files (if any)
+*.tfvars
+*.tfvars.json
+
+# Backup files created by editors
+*~
+*.swp
+*.bak
+*.backup
+*.orig
