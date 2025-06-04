@@ -78,6 +78,8 @@ AWS console:
 
 ![Console-output](assets/Console.png)
 
+---
+
 
 ## 🔑 Accessing the Instance
 
