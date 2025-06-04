@@ -40,8 +40,8 @@ terraform-ec2-project/
 ### 1. Clone the Repository
 
 ```
-git clone https://github.com/your-username/terraform-ec2-project.git
-cd terraform-ec2-project
+git clone https://github.com/Ajinkya-A3/terraform-practice.git
+cd EC2
 ```
 
 
