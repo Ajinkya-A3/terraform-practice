@@ -11,6 +11,8 @@ resource "local_file" "private_key" {
   file_permission = "0600"
 
 }
+
+
 resource "aws_key_pair" "ec2_key_pair" {
   key_name   = var.key_name # Replace with your actual key pair name
   public_key = tls_private_key.ec2_key.public_key_openssh
@@ -29,7 +31,8 @@ resource "aws_instance" "example" {
 
   subnet_id = var.subnet_id
 
-  user_data = file("user_data.sh")               # Ensure this file exists in the same directory
+  user_data = file("user_data.sh")               # shell script to run on instance creation
+
   key_name  = aws_key_pair.ec2_key_pair.key_name # Use the created key pair
 
   vpc_security_group_ids = [aws_security_group.ec2_sg.id] # Attach the security group
@@ -50,14 +53,14 @@ resource "aws_security_group" "ec2_sg" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"] # Allow SSH access from anywhere (not recommended for production)
+    cidr_blocks = ["0.0.0.0/0"] # Allow SSH access from anywhere 
   }
 
   ingress {
     from_port   = 80
     to_port     = 80
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"] # Allow HTTP access from anywhere (not recommended for production)
+    cidr_blocks = ["0.0.0.0/0"] # Allow HTTP access from anywhere
   }
 
   egress {
