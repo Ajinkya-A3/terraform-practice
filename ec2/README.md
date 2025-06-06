@@ -126,5 +126,5 @@ terraform destroy
 
 ##  Author
 
-- **Your Name**
+- **Ajinkya-A3**
 - GitHub: [@Ajinkya-A3](https://github.com/Ajinkya-A3)
